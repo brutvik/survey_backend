@@ -27,12 +27,12 @@ pipeline{
     }
     stage("Deploying to Rancher as single pod") {
         steps{
-            sh 'kubectl set image deployment/node-port container-0=rutvikbrk1/backend:${BUILD_TIMESTAMP}'
+            sh 'kubectl set image deployment/deploynp container-0=rutvikbrk1/backend:${BUILD_TIMESTAMP}'
         }
     }
     stage("Deploying to Rancher as load balancer"){
         steps {
-            sh 'kubectl set image deployment/loadbalancer-2 container-0=rutvikbrk1/backend:${BUILD_TIMESTAMP}'
+            sh 'kubectl set image deployment/deploylb container-0=rutvikbrk1/backend:${BUILD_TIMESTAMP}'
         }
     }
     }
