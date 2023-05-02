@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN apt-get update && apt-get install -y openjdk-17-jdk
+RUN apt-get update && apt-get install -y openjdk-17-jdk && apt-get install -y unzip
 RUN mkdir test
 
 COPY backend.war /test
