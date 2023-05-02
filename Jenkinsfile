@@ -10,7 +10,7 @@ pipeline{
                     checkout scm
                     
                     sh 'rm -rf *.war'
-                    sh 'jar -cvf backend.war survey_backend .'
+                    sh 'jar -cvf backend.war /test/survey_backend .'
                     sh 'echo ${BUILD_TIMESTAMP}'
                     sh "docker login -u rutvikbrk1 -p ${DOCKERHUB_PASS}"
                     sh 'docker build -t rutvikbrk1/backend:${BUILD_TIMESTAMP} .'
