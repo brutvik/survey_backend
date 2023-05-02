@@ -2,7 +2,7 @@ FROM ubuntu
 RUN apt-get update && apt-get install -y openjdk-17-jdk
 RUN mkdir test
 
-COPY test/backend.war /test
+COPY backend.war /test
 RUN unzip backend.war
 CMD ["bash"]
 
