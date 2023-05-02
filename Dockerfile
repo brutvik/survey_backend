@@ -1,10 +1,12 @@
 FROM ubuntu
 RUN apt-get update && apt-get install -y openjdk-17-jdk
-RUN mkdir target
+RUN mkdir test
 
-COPY demo/target/demo-0.0.1-SNAPSHOT.jar /target
+COPY test/backend.war /test
+RUN unzip backend.war
+CMD ["bash"]
 
-CMD ["/usr/bin/java", "-jar", "/target/demo-0.0.1-SNAPSHOT.jar"]
+CMD ["/usr/bin/java", "-jar", "backend/target/demo-0.0.1-SNAPSHOT.jar"]
 
 
 
